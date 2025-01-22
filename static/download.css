@@ -1,0 +1,11 @@
+/* static/download.css */
+/* Custom CSS for centering the button and bold text */
+.center-button {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.bold-text {
+    font-weight: bold;
+}

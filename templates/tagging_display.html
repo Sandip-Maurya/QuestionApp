@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestionApp - Tagging Data</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/download.css">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <!-- Data Container for CSV download -->
+            <div id="data-container" data-columns='{{ tagging_columns | tojson }}'
+                data-data='{{ tagging_data | tojson }}'>
+            </div>
+            <div class="center-button">
+                <button class="button is-primary bold-text" onclick="downloadCSV()">
+                    Download Tagging Data as CSV
+                </button>
+            </div>
+
+            <table class="table is-striped is-hoverable is-fullwidth mt-5">
+                <thead>
+                    <tr>
+                        {% for column in tagging_columns %}
+                        <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for row in tagging_data %}
+                    <tr>
+                        {% for column in tagging_columns %}
+                        <td>{{ row[column] }}</td>
+                        {% endfor %}
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <script src="/static/download.js"></script>
+</body>
+
+</html>

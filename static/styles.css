@@ -1,0 +1,40 @@
+/* Default styles for the web */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Styles for printing */
+@media print {
+    body, h1, h2, h3, h4, h5, h6, p, span, li, td, th, a {
+        color: #000 !important; /* Force black color */
+        background: none !important; /* Remove any background colors */
+        font-weight: normal !important; /* Ensure text is legible */
+    }
+
+    table {
+        border-collapse: collapse; /* Improve table appearance for printing */
+    }
+
+    th, td {
+        border: 1px solid #000 !important; /* Add borders to tables for visibility */
+        padding: 8px !important; /* Add padding for better readability */
+    }
+
+    /* Ensure links appear as plain text */
+    a {
+        text-decoration: none !important;
+        color: #000 !important;
+    }
+
+    /* Remove box shadows and any visual effects */
+    * {
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+
+    /* Add margins for printed pages */
+    @page {
+        margin: 1in;
+    }
+}

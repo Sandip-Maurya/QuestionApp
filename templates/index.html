@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuestionApp - Input Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
+</head>
+
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title has-text-centered">QuestionApp</h1>
+            <form action="/" method="post" class="box">
+                <div class="field">
+                    <label class="label">Select Exam</label>
+                    <div class="control">
+                        <div class="select is-fullwidth">
+                            <select name="exam_id" required>
+                                <option value="1">JEE Main</option>
+                                <option value="2">NEET</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field">
+                    <label class="label">Question IDs</label>
+                    <div class="control">
+                        <textarea name="ids_input" class="textarea" placeholder="{{placeholder_message}}" required></textarea>
+                    </div>
+                </div>
+
+                <div class="field is-grouped">
+                    <div class="control">
+                        <button type="submit" name="action" value="view_content" class="button is-link">View Questions</button>
+                    </div>
+                    <div class="control">
+                        <button type="submit" name="action" value="view_tagging" class="button is-info">View Tagging</button>
+                    </div>
+                </div>
+            </form>
+            
+        </div>
+<h2 class="title has-text-centered">
+    {{error}}
+</h2>
+    </section>
+</body>
+
+</html>
