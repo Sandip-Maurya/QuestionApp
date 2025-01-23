@@ -37,7 +37,7 @@ async def handle_form(
         # Get question data
         question_data = get_question_data(exam_id, ids_input)
         if question_data is None or question_data.empty:
-            return templates.TemplateResponse("index.html", {"request": request, "error": "No data found."})
+            return templates.TemplateResponse("index.html", {"request": request, "error": "No data found. Please select correct exam or change IDs."})
 
         # Handle different actions
         if action == "view_content":

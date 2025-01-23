@@ -4,9 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuestionApp - Tagging Data</title>
+    <title>Tagging Data</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/download.css">
+    <link rel="stylesheet" href="/static/css/download.css">
 </head>
 
 <body>
@@ -17,8 +17,8 @@
                 data-data='{{ tagging_data | tojson }}'>
             </div>
             <div class="center-button">
-                <button class="button is-primary bold-text" onclick="downloadCSV()">
-                    Download Tagging Data as CSV
+                <button class="button has-text-white is-success is-medium is-rounded" onclick="downloadCSV()">
+                    Download Data as CSV
                 </button>
             </div>
 
@@ -41,9 +41,12 @@
                 </tbody>
             </table>
         </div>
+        <div class="has-text-centered">
+            <a href="/" class="button is-link is-medium is-rounded mt-5">Go Back to Home</a>
+        </div>
     </section>
 
-    <script src="/static/download.js"></script>
+    <script src="/static/js/download.js"></script>
 </body>
 
 </html>

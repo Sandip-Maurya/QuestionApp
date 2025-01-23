@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuestionApp - Questions</title>
+    <title>Questions Data</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/css/style.css">
 
 </head>
 
 <body>
     <section class="section">
         <div class="container">
-            <h1 class="title has-text-centered">Questions</h1>
+            <h1 class="title has-text-centered">Complete Questions</h1>
             {% for question_no, question_data in content_data.items() %}
             <div class="box mb-5">
                 <h2 class="title is-5">Q{{ question_no }} - Question ID: {{ question_data['Q_ID'] }}</h2>
@@ -53,8 +53,10 @@
             </div>
             {% endfor %}
         </div>
-        
-        <a href="/" class="button is-link">Back</a>
+        <div class="has-text-centered">
+            <a href="/" class="button is-link is-medium is-rounded mt-5">Go Back to Home</a>
+        </div>
+
         </div>
     </section>
 

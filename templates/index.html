@@ -4,20 +4,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>QuestionApp - Input Form</title>
+    <title>QuestionApp</title>
     <link href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" rel="stylesheet">
 </head>
 
 <body>
     <section class="section">
         <div class="container">
-            <h1 class="title has-text-centered">QuestionApp</h1>
+            <h1 class="title has-text-centered">Search the Questions by IDs</h1>
             <form action="/" method="post" class="box">
                 <div class="field">
                     <label class="label">Select Exam</label>
                     <div class="control">
                         <div class="select is-fullwidth">
-                            <select name="exam_id" required>
+                            <select id="exam-dropdown" name="exam_id" required>
                                 <option value="1">JEE Main</option>
                                 <option value="2">NEET</option>
                             </select>
@@ -28,25 +28,35 @@
                 <div class="field">
                     <label class="label">Question IDs</label>
                     <div class="control">
-                        <textarea name="ids_input" class="textarea" placeholder="{{placeholder_message}}" required></textarea>
+                        <textarea id="question-ids" name="ids_input" class="textarea"
+                            placeholder="{{placeholder_message}}" required></textarea>
                     </div>
                 </div>
 
-                <div class="field is-grouped">
-                    <div class="control">
-                        <button type="submit" name="action" value="view_content" class="button is-link">View Questions</button>
-                    </div>
-                    <div class="control">
-                        <button type="submit" name="action" value="view_tagging" class="button is-info">View Tagging</button>
-                    </div>
+                <div class="field is-grouped is-grouped-centered">
+                    <button type="submit" name="action" value="view_content"
+                        class="button is-link mr-4 is-rounded is-medium">View Questions</button>
+                    <button type="submit" name="action" value="view_tagging"
+                        class="button is-success ml-4 is-rounded is-medium">View Tagging</button>
                 </div>
             </form>
-            
+
+            <div id="error-container" class="mt-4">
+                {% if error %}
+                <div id="error-notification" class="notification is-danger is-light has-text-centered">
+                    <button class="delete" onclick="this.parentElement.style.display='none';"></button>
+                    <div class="content is-large">
+                        {{ error }}
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+
         </div>
-<h2 class="title has-text-centered">
-    {{error}}
-</h2>
+
+
     </section>
+    <script src="/static/js/main.js"></script>
 </body>
 
 </html>
