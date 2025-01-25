@@ -32,6 +32,7 @@ TAGGING_COLUMNS = [
     'SUBJECT',
     'CHAPTER',
     'TOPIC',
+    'Q_DIFFICULTY',
     'Q_CATEGORY',
     'Q_TEMPLATE',
     'Q_STATUS',
