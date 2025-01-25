@@ -22,6 +22,7 @@ def process_tagging(question_data):
     question_data['Q_TEMPLATE'] = question_data['templateType'].map(TEMPLATE_MAP)
     question_data['Q_CATEGORY'] = question_data['questionCategory'].map(CATEGORY_MAP)
     question_data.index = pd.Index(range(1, len(question_data)+1 ), name='Q_NO')
+    question_data['S_No'] = question_data.index
     question_data.rename(columns={'_id': 'Q_ID', 'quesStatus': 'Q_STATUS'}, inplace=True)
     return question_data
 

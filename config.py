@@ -11,6 +11,7 @@ ADMIN_DB_Name = 'qandi_admin'
 QUESTIONS_COLLECTION_NAME = 'questionBank'
 CHAPTER_COLLECTION_NAME = 'examSubjectChapters'
 TOPIC_COLLECTION_NAME = 'topics'
+MAX_QUESTION_IDS = 200
 
 EXAM_NAME_TO_ID = {
     'JEE Main':"1",
@@ -25,6 +26,7 @@ IDS_INPUT_MESSAGE = '''Example: 3085, 20678, 2055 or
 '''
 
 TAGGING_COLUMNS = [
+    'S_No',
     'Q_ID',
     'EXAM',
     'SUBJECT',
