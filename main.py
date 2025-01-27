@@ -38,7 +38,7 @@ async def index(request: Request):
     return templates.TemplateResponse("index.html", {"request": request, 'placeholder_message': IDS_INPUT_MESSAGE})
 
 
-@app.post("/")
+@app.post("/view")
 async def handle_form(
     request: Request,
     action: str = Form(...),
